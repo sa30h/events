@@ -1,0 +1,75 @@
+{% extends "events/base.html" %}
+{% load static%}
+{% block title %}
+Dashboard
+{% endblock title %}
+{% block content %}
+<div class="container my-3">
+  <div class="row">
+    
+
+<div class="col-md-3">
+    <div class="card card-body">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col"><a href="/auth/mytask/"  class="btn btn-primary w-100">My Tasks</a></th> 
+    </tr>
+  </thead>
+  <tbody>
+    {% if request.user.is_superuser %}
+        <tr>
+      <th scope="col"><a href="/auth/register/"  class="btn btn-success w-100">Add User</a></th> 
+    </tr>
+    
+        <tr>
+      <th scope="col"><a href="/auth/task/"  class="btn btn-warning w-100">Add Task</a></th> 
+    </tr>
+    {% endif %}
+        <tr>
+      <th scope="col"><a href="/auth/taskupdate/"  class="btn btn-dark w-100">Update Task</a></th> 
+    </tr>
+        <tr>
+      <th scope="col"><a href="/auth/comment/"  class="btn btn-info w-100">Comment</a></th> 
+    </tr>
+
+  </tbody>
+</table>
+    
+    </div>
+
+</div>
+
+<div class="col-md-9">
+    <div class="card card-body">
+    
+           
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col" class="w-25">Member</th>
+      <th scope="col"class="w-25">Role</th>
+      <th scope="col"class="w-25">Update</th>
+      <th scope="col"class="w-25">Comment</th>
+      <th scope="col"class="w-25">Comment&nbsp;by</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in data2%}
+    <tr>
+      <td class="w-25">{{i.member}}</td>
+      <td class="w-25">{{i.task}} </td>
+      <td class="w-25">{{i.update}}</td>
+      <td class="w-25">{{i.comment}}</td>
+      <td class="w-25">{{i.commentby}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+    
+    </div>
+  
+</div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,51 @@
+{% extends "events/base.html" %}
+{% load static %}
+{% block title %}
+    Complaint
+{% endblock title %}
+{% block content %}
+<style type="text/css">
+  .xx{
+    min-width: 20%;
+    max-width: 20%;
+  }
+</style>
+<div class="container">
+	<div class="row">
+    <h1 class="display-4">My Tasks</h1>
+		<div class="col">
+
+			<table class="table">
+  <thead>
+    <tr>
+      <th scope="col" class="w-25">Role</th>
+      <th scope="col" class="w-25">Update</th>
+      <th scope="col"class="w-25">Comment</th>
+      <th scope="col" class="w-25">Comment by</th>
+    </tr>
+  </thead>
+  <tbody>
+    {%for item in data%}
+    <tr>
+      <td class="w-25">{{item.task}}</td>
+      <td class="w-25">{{item.update}}</td>
+      <td class="w-25">{{item.comment}}</td>
+      <td class="w-25">{{item.commentby}}</td>
+   
+    </tr>
+    {%endfor%}
+   
+     
+
+   
+  </tbody>
+</table>
+
+ 
+    
+  		
+		</div>
+	</div>
+</div>
+  
+{% endblock content %}

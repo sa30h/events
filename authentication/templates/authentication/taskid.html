@@ -1,0 +1,63 @@
+{% extends "events/base.html" %}
+{% load static %}
+{% block title %}
+    TaskId
+{% endblock title %}
+{% block content %}
+<div class="container">
+	<div class="row">
+		<div class="col">
+
+			<table class="table">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+      <th scope="row">Task</th>
+      {%for x in task%}
+
+      <td>{{x.task}}</td>
+
+      {%endfor%}
+     
+    </tr>
+    <tr>
+      <th scope="row">Updates</th>
+           {%for x in update%}
+
+      <td>{{x.update}}</td>
+
+      {%endfor%}
+    </tr>
+         <tr>
+      <th scope="row">Comment</th>
+           {%for x in comment%}
+
+      <td>{{x.comment}}</td>
+
+      {%endfor%}
+    </tr>
+    
+        <td>
+        	
+     
+
+   
+  </tbody>
+</table>
+
+ 
+    
+  		
+		</div>
+	</div>
+</div>
+  
+{% endblock content %}

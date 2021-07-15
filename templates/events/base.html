@@ -1,0 +1,62 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events | {% block title %}{% endblock title %}</title>
+
+  <link rel="stylesheet"  href="{% static "events/css/all.css" %}">
+  <link rel="stylesheet"  href="{% static "events/css/bootstrap.css" %}">
+</head>
+<body>
+  <style >
+    .main{
+      min-height: 100vh;
+      height: 100%;
+    }
+  </style>
+
+<header>
+  {% include 'events/nav.html' %}
+
+</header>
+
+
+<content >
+  
+  <div class="main">
+    {% block content %}    
+  {% endblock content %}
+  </div>
+  
+  {% block msg %}
+  {% endblock msg %}
+  
+
+</content>
+
+
+
+
+<script src="{% static 'events/js/jquery.js'%}"></script>
+
+<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+<script src="{% static 'events/js/function.js'%}"></script>
+
+<script src="{% static 'events/js/popper.js'%}"></script>
+<script src="{% static 'events/js/all.js'%}"></script>
+<script src="{% static 'events/js/bootstrap.js'%}"></script>
+
+
+
+
+</body>
+</html>
+
+
+
+
